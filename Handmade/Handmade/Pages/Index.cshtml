@@ -1,0 +1,34 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to NuclearBlast CD Shop</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+    <div class="container pb-5 mb-sm-1">
+        <!-- Categories grid-->
+        <div class="row">
+            @foreach (var product in Model.Products)
+            {
+                <div class="col-md-4 col-sm-6">
+                    <div class="card border-0 mb-grid-gutter">
+                        <a class="card-img-tiles" href="#">
+                            <div class="main-img"><img src="@product.Image" alt="Clothing"></div>
+                            <div class="thumblist"><img src="@product.Image" alt="Bags"><img src="@product.Image" alt="Bags"></div>
+                        </a>
+                        <div class="card-body border mt-n1 py-4 text-center">
+                            <h2 class="h5 mb-1">@product.Title</h2>
+                            <span class="d-block mb-3 font-size-xs text-muted">Starting from <span class="font-weight-semibold">$49.99</span></span>
+                            <a class="btn btn-pill btn-outline-primary btn-sm" href="#">More info</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
